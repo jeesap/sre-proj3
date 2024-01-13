@@ -17,5 +17,8 @@ I have checked deployment file hello.yml and I can see
 
 I have replaced /nginx_status with healthz
 
-and deployed again
+and deployed again with command
 
+kubectl apply -f hello.yml
+
+This has resolved the issue.
