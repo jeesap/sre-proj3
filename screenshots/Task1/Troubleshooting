@@ -1,0 +1,21 @@
+Logs gives below error 
+
+
+Failed health check you want to ping /healthz
+10.100.3.198 - - [12/Jan/2024 23:54:08] "GET /nginx_status HTTP/1.1" 500 -
+Failed health check you want to ping /healthz
+10.100.3.198 - - [12/Jan/2024 23:54:10] "GET /nginx_status HTTP/1.1" 500 -
+Failed health check you want to ping /healthz
+10.100.3.198 - - [12/Jan/2024 23:54:12] "GET /nginx_status HTTP/1.1" 500 -
+
+I have checked deployment file hello.yml and I can see
+
+          livenessProbe:
+            httpGet:
+              port: 9000
+              path: /nginx_status
+
+I have replaced /nginx_status with healthz
+
+and deployed again
+
